@@ -13,7 +13,7 @@ from functools import partial
 class TurtleSpawnerNode(Node): # MODIFY NAME
     def __init__(self):
         super().__init__("turtle_spawner") # MODIFY NAME
-        self.get_logger().info("Turtle Spawner has started")
+        self.get_logger().info("Turtle Spawner has started!!!!!!!!!!!!!!!!!!!!")
 
         self.declare_parameter("spawn_frequency", 2)
         spawn_frequency= 1 / self.get_parameter("spawn_frequency").value
