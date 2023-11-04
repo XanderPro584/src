@@ -13,7 +13,7 @@ class TurtleControllerNode(Node): # MODIFY NAME
     
     def __init__(self):
         super().__init__("turtle_controller") # MODIFY NAME
-        self.get_logger().info("Turtle Controller node has started!!!!!!!!:)")
+        self.get_logger().info("Turtle Controller node has started!!!!!!!!:):)")
 
         self.declare_parameter("ctrl_frequency", 100)
 
