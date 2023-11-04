@@ -1,0 +1,50 @@
+running egg_info
+creating build/new_py_pkg/new_py_pkg.egg-info
+writing build/new_py_pkg/new_py_pkg.egg-info/PKG-INFO
+writing dependency_links to build/new_py_pkg/new_py_pkg.egg-info/dependency_links.txt
+writing entry points to build/new_py_pkg/new_py_pkg.egg-info/entry_points.txt
+writing requirements to build/new_py_pkg/new_py_pkg.egg-info/requires.txt
+writing top-level names to build/new_py_pkg/new_py_pkg.egg-info/top_level.txt
+writing manifest file 'build/new_py_pkg/new_py_pkg.egg-info/SOURCES.txt'
+reading manifest file 'build/new_py_pkg/new_py_pkg.egg-info/SOURCES.txt'
+writing manifest file 'build/new_py_pkg/new_py_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build
+creating /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib
+creating /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+copying new_py_pkg/smartphone.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+copying new_py_pkg/number_publisher.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+copying new_py_pkg/my_first_node.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+copying new_py_pkg/__init__.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+copying new_py_pkg/number_counter.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+copying new_py_pkg/robot_news_station.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+running install
+running install_lib
+creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/smartphone.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/number_publisher.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/my_first_node.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/__init__.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/number_counter.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/robot_news_station.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/smartphone.py to smartphone.cpython-310.pyc
+byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/number_publisher.py to number_publisher.cpython-310.pyc
+byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/my_first_node.py to my_first_node.cpython-310.pyc
+byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/number_counter.py to number_counter.cpython-310.pyc
+byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/robot_news_station.py to robot_news_station.cpython-310.pyc
+running install_data
+creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index
+creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index/resource_index
+creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index/resource_index/packages
+copying resource/new_py_pkg -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/new_py_pkg
+running install_egg_info
+Copying build/new_py_pkg/new_py_pkg.egg-info to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing number_publisher script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+Installing py_node script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+Installing robot_news_station script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+Installing smartphone script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+writing list of installed files to '/home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/install.log'

@@ -1,0 +1,52 @@
+[1.024s] Invoking command in '/home/alexander/ros2_ws/src/new_py_pkg': PYTHONPATH=/home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/prefix_override:/home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/new_py_pkg build --build-base /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build install --record /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/install.log --single-version-externally-managed
+[1.286s] running egg_info
+[1.287s] creating build/new_py_pkg/new_py_pkg.egg-info
+[1.287s] writing build/new_py_pkg/new_py_pkg.egg-info/PKG-INFO
+[1.287s] writing dependency_links to build/new_py_pkg/new_py_pkg.egg-info/dependency_links.txt
+[1.287s] writing entry points to build/new_py_pkg/new_py_pkg.egg-info/entry_points.txt
+[1.287s] writing requirements to build/new_py_pkg/new_py_pkg.egg-info/requires.txt
+[1.287s] writing top-level names to build/new_py_pkg/new_py_pkg.egg-info/top_level.txt
+[1.287s] writing manifest file 'build/new_py_pkg/new_py_pkg.egg-info/SOURCES.txt'
+[1.289s] reading manifest file 'build/new_py_pkg/new_py_pkg.egg-info/SOURCES.txt'
+[1.290s] writing manifest file 'build/new_py_pkg/new_py_pkg.egg-info/SOURCES.txt'
+[1.290s] running build
+[1.290s] running build_py
+[1.290s] creating /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build
+[1.290s] creating /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib
+[1.290s] creating /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+[1.290s] copying new_py_pkg/smartphone.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+[1.291s] copying new_py_pkg/number_publisher.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+[1.291s] copying new_py_pkg/my_first_node.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+[1.291s] copying new_py_pkg/__init__.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+[1.291s] copying new_py_pkg/number_counter.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+[1.291s] copying new_py_pkg/robot_news_station.py -> /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg
+[1.291s] running install
+[1.291s] running install_lib
+[1.292s] creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+[1.292s] copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/smartphone.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+[1.292s] copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/number_publisher.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+[1.292s] copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/my_first_node.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+[1.292s] copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/__init__.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+[1.292s] copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/number_counter.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+[1.292s] copying /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build/lib/new_py_pkg/robot_news_station.py -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg
+[1.293s] byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/smartphone.py to smartphone.cpython-310.pyc
+[1.293s] byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/number_publisher.py to number_publisher.cpython-310.pyc
+[1.293s] byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/my_first_node.py to my_first_node.cpython-310.pyc
+[1.294s] byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/__init__.py to __init__.cpython-310.pyc
+[1.294s] byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/number_counter.py to number_counter.cpython-310.pyc
+[1.294s] byte-compiling /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg/robot_news_station.py to robot_news_station.cpython-310.pyc
+[1.294s] running install_data
+[1.295s] creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index
+[1.295s] creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index/resource_index
+[1.295s] creating /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index/resource_index/packages
+[1.295s] copying resource/new_py_pkg -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/ament_index/resource_index/packages
+[1.295s] copying package.xml -> /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/share/new_py_pkg
+[1.295s] running install_egg_info
+[1.297s] Copying build/new_py_pkg/new_py_pkg.egg-info to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages/new_py_pkg-0.0.0-py3.10.egg-info
+[1.297s] running install_scripts
+[1.317s] Installing number_publisher script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+[1.317s] Installing py_node script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+[1.317s] Installing robot_news_station script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+[1.317s] Installing smartphone script to /home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/new_py_pkg
+[1.317s] writing list of installed files to '/home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/install.log'
+[1.348s] Invoked command in '/home/alexander/ros2_ws/src/new_py_pkg' returned '0': PYTHONPATH=/home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/prefix_override:/home/alexander/ros2_ws/src/new_py_pkg/install/new_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/new_py_pkg build --build-base /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/build install --record /home/alexander/ros2_ws/src/new_py_pkg/build/new_py_pkg/install.log --single-version-externally-managed

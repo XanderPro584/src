@@ -1,0 +1,207 @@
+[0.000000] (-) TimerEvent: {}
+[0.000275] (new_cpp_pkg) JobQueued: {'identifier': 'new_cpp_pkg', 'dependencies': OrderedDict()}
+[0.000309] (new_cpp_pkg) JobStarted: {'identifier': 'new_cpp_pkg'}
+[0.092646] (new_cpp_pkg) JobProgress: {'identifier': 'new_cpp_pkg', 'progress': 'cmake'}
+[0.092710] (new_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/alexander/ros2_ws/src/new_cpp_pkg', '-DCMAKE_INSTALL_PREFIX=/home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg'], 'cwd': '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alexander'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alexander'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/alexander'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1077'), ('SYSTEMD_EXEC_PID', '1251'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3155'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/alexander/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alexander'), ('JOURNAL_STREAM', '8:30197'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alexander'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/alexander/anaconda3/condabin:/usr/lib/ccache:/usr/lib/ccache:/home/alexander/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/alexander/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/alexander/ardupilot/Tools/autotest'), ('SESSION_MANAGER', 'local/alexander-XPS-13-9370:@/tmp/.ICE-unix/1229,unix/alexander-XPS-13-9370:/tmp/.ICE-unix/1229'), ('INVOCATION_ID', '3809e9997ae54736aa91d78b00f3f906'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.BD23C2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/alexander/ros2_ws/install/new_py_pkg:/home/alexander/ros2_ws/install/new_cpp_pkg:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/alexander/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:70629e7b-737b-4fc5-acdf-98715ffe3635'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/alexander/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/alexander/ros2_ws/install/new_py_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/alexander/ros2_ws/install/new_cpp_pkg:/home/alexander/ros2_ws/install/new_py_pkg:/opt/ros/humble')]), 'shell': False}
+[0.099374] (-) TimerEvent: {}
+[0.199680] (-) TimerEvent: {}
+[0.212753] (new_cpp_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.299798] (-) TimerEvent: {}
+[0.317980] (new_cpp_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.332262] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.399954] (-) TimerEvent: {}
+[0.401975] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.410508] (new_cpp_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/lib/ccache/cc - skipped\n'}
+[0.410999] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.411640] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.415966] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.495873] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.500061] (-) TimerEvent: {}
+[0.504731] (new_cpp_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped\n'}
+[0.505051] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.505516] (new_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.511426] (new_cpp_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.600168] (-) TimerEvent: {}
+[0.698273] (new_cpp_pkg) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter \n'}
+[0.700231] (-) TimerEvent: {}
+[0.800473] (-) TimerEvent: {}
+[0.807852] (new_cpp_pkg) StdoutLine: {'line': b'-- Found rclcpp: 16.0.6 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.869459] (new_cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.876044] (new_cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.888325] (new_cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.900606] (-) TimerEvent: {}
+[0.909006] (new_cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.935938] (new_cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.000741] (-) TimerEvent: {}
+[1.018703] (new_cpp_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.021938] (new_cpp_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.4 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.100872] (-) TimerEvent: {}
+[1.126165] (new_cpp_pkg) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.154059] (new_cpp_pkg) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.201011] (-) TimerEvent: {}
+[1.203880] (new_cpp_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.216813] (new_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.301188] (-) TimerEvent: {}
+[1.322455] (new_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.323099] (new_cpp_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.401338] (-) TimerEvent: {}
+[1.435025] (new_cpp_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.436284] (new_cpp_pkg) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.501456] (-) TimerEvent: {}
+[1.601815] (-) TimerEvent: {}
+[1.632627] (new_cpp_pkg) StdoutLine: {'line': b'-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)\n'}
+[1.701916] (-) TimerEvent: {}
+[1.802271] (-) TimerEvent: {}
+[1.863161] (new_cpp_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.881747] (new_cpp_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[1.884067] (new_cpp_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg\n'}
+[1.894599] (new_cpp_pkg) CommandEnded: {'returncode': 0}
+[1.895523] (new_cpp_pkg) JobProgress: {'identifier': 'new_cpp_pkg', 'progress': 'build'}
+[1.896475] (new_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg', '--', '-j8', '-l8'], 'cwd': '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alexander'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alexander'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/alexander'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1077'), ('SYSTEMD_EXEC_PID', '1251'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3155'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/alexander/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alexander'), ('JOURNAL_STREAM', '8:30197'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alexander'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/alexander/anaconda3/condabin:/usr/lib/ccache:/usr/lib/ccache:/home/alexander/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/alexander/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/alexander/ardupilot/Tools/autotest'), ('SESSION_MANAGER', 'local/alexander-XPS-13-9370:@/tmp/.ICE-unix/1229,unix/alexander-XPS-13-9370:/tmp/.ICE-unix/1229'), ('INVOCATION_ID', '3809e9997ae54736aa91d78b00f3f906'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.BD23C2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/alexander/ros2_ws/install/new_py_pkg:/home/alexander/ros2_ws/install/new_cpp_pkg:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/alexander/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:70629e7b-737b-4fc5-acdf-98715ffe3635'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/alexander/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/alexander/ros2_ws/install/new_py_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/alexander/ros2_ws/install/new_cpp_pkg:/home/alexander/ros2_ws/install/new_py_pkg:/opt/ros/humble')]), 'shell': False}
+[1.902389] (-) TimerEvent: {}
+[1.956306] (new_cpp_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/smartphone.dir/src/smartphone.cpp.o\x1b[0m\n'}
+[1.956609] (new_cpp_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/cpp_node.dir/src/my_first_node.cpp.o\x1b[0m\n'}
+[1.956778] (new_cpp_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/robot_news_station.dir/src/robot_news_station.cpp.o\x1b[0m\n'}
+[2.002538] (-) TimerEvent: {}
+[2.102903] (-) TimerEvent: {}
+[2.203262] (-) TimerEvent: {}
+[2.303602] (-) TimerEvent: {}
+[2.403920] (-) TimerEvent: {}
+[2.504328] (-) TimerEvent: {}
+[2.604695] (-) TimerEvent: {}
+[2.705080] (-) TimerEvent: {}
+[2.805469] (-) TimerEvent: {}
+[2.905828] (-) TimerEvent: {}
+[3.006184] (-) TimerEvent: {}
+[3.106535] (-) TimerEvent: {}
+[3.206910] (-) TimerEvent: {}
+[3.307266] (-) TimerEvent: {}
+[3.407657] (-) TimerEvent: {}
+[3.508084] (-) TimerEvent: {}
+[3.608458] (-) TimerEvent: {}
+[3.708872] (-) TimerEvent: {}
+[3.809238] (-) TimerEvent: {}
+[3.909646] (-) TimerEvent: {}
+[4.010074] (-) TimerEvent: {}
+[4.110463] (-) TimerEvent: {}
+[4.210859] (-) TimerEvent: {}
+[4.311243] (-) TimerEvent: {}
+[4.411664] (-) TimerEvent: {}
+[4.512098] (-) TimerEvent: {}
+[4.612520] (-) TimerEvent: {}
+[4.712925] (-) TimerEvent: {}
+[4.813298] (-) TimerEvent: {}
+[4.913689] (-) TimerEvent: {}
+[5.014142] (-) TimerEvent: {}
+[5.114570] (-) TimerEvent: {}
+[5.214950] (-) TimerEvent: {}
+[5.315317] (-) TimerEvent: {}
+[5.415663] (-) TimerEvent: {}
+[5.516057] (-) TimerEvent: {}
+[5.616457] (-) TimerEvent: {}
+[5.716800] (-) TimerEvent: {}
+[5.817151] (-) TimerEvent: {}
+[5.917511] (-) TimerEvent: {}
+[6.017885] (-) TimerEvent: {}
+[6.118239] (-) TimerEvent: {}
+[6.182119] (new_cpp_pkg) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable cpp_node\x1b[0m\n'}
+[6.218382] (-) TimerEvent: {}
+[6.318713] (-) TimerEvent: {}
+[6.374991] (new_cpp_pkg) StdoutLine: {'line': b'[ 66%] Built target cpp_node\n'}
+[6.418870] (-) TimerEvent: {}
+[6.519241] (-) TimerEvent: {}
+[6.619592] (-) TimerEvent: {}
+[6.719951] (-) TimerEvent: {}
+[6.820334] (-) TimerEvent: {}
+[6.920731] (-) TimerEvent: {}
+[7.021079] (-) TimerEvent: {}
+[7.121440] (-) TimerEvent: {}
+[7.221819] (-) TimerEvent: {}
+[7.322181] (-) TimerEvent: {}
+[7.422513] (-) TimerEvent: {}
+[7.522847] (-) TimerEvent: {}
+[7.623185] (-) TimerEvent: {}
+[7.723498] (-) TimerEvent: {}
+[7.823872] (-) TimerEvent: {}
+[7.864188] (new_cpp_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable robot_news_station\x1b[0m\n'}
+[7.923994] (-) TimerEvent: {}
+[8.024394] (-) TimerEvent: {}
+[8.124723] (-) TimerEvent: {}
+[8.133427] (new_cpp_pkg) StdoutLine: {'line': b'[ 83%] Built target robot_news_station\n'}
+[8.224874] (-) TimerEvent: {}
+[8.325238] (-) TimerEvent: {}
+[8.425644] (-) TimerEvent: {}
+[8.526026] (-) TimerEvent: {}
+[8.626417] (-) TimerEvent: {}
+[8.726795] (-) TimerEvent: {}
+[8.827145] (-) TimerEvent: {}
+[8.927478] (-) TimerEvent: {}
+[9.027812] (-) TimerEvent: {}
+[9.128152] (-) TimerEvent: {}
+[9.228478] (-) TimerEvent: {}
+[9.328799] (-) TimerEvent: {}
+[9.429116] (-) TimerEvent: {}
+[9.529438] (-) TimerEvent: {}
+[9.629756] (-) TimerEvent: {}
+[9.730081] (-) TimerEvent: {}
+[9.830399] (-) TimerEvent: {}
+[9.930716] (-) TimerEvent: {}
+[10.031038] (-) TimerEvent: {}
+[10.131362] (-) TimerEvent: {}
+[10.231678] (-) TimerEvent: {}
+[10.332003] (-) TimerEvent: {}
+[10.432332] (-) TimerEvent: {}
+[10.532650] (-) TimerEvent: {}
+[10.633001] (-) TimerEvent: {}
+[10.733330] (-) TimerEvent: {}
+[10.833625] (-) TimerEvent: {}
+[10.933948] (-) TimerEvent: {}
+[11.034248] (-) TimerEvent: {}
+[11.134567] (-) TimerEvent: {}
+[11.234907] (-) TimerEvent: {}
+[11.335527] (-) TimerEvent: {}
+[11.436103] (-) TimerEvent: {}
+[11.536707] (-) TimerEvent: {}
+[11.637115] (-) TimerEvent: {}
+[11.737776] (-) TimerEvent: {}
+[11.838541] (-) TimerEvent: {}
+[11.939098] (-) TimerEvent: {}
+[12.036756] (new_cpp_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable smartphone\x1b[0m\n'}
+[12.039217] (-) TimerEvent: {}
+[12.139551] (-) TimerEvent: {}
+[12.239922] (-) TimerEvent: {}
+[12.340244] (-) TimerEvent: {}
+[12.440575] (-) TimerEvent: {}
+[12.531963] (new_cpp_pkg) StdoutLine: {'line': b'[100%] Built target smartphone\n'}
+[12.540723] (-) TimerEvent: {}
+[12.570623] (new_cpp_pkg) CommandEnded: {'returncode': 0}
+[12.640916] (-) TimerEvent: {}
+[12.654940] (new_cpp_pkg) JobProgress: {'identifier': 'new_cpp_pkg', 'progress': 'install'}
+[12.672403] (new_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg'], 'cwd': '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'alexander'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alexander'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/alexander'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1077'), ('SYSTEMD_EXEC_PID', '1251'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3155'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/alexander/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'alexander'), ('JOURNAL_STREAM', '8:30197'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alexander'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/alexander/anaconda3/condabin:/usr/lib/ccache:/usr/lib/ccache:/home/alexander/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/alexander/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/alexander/ardupilot/Tools/autotest'), ('SESSION_MANAGER', 'local/alexander-XPS-13-9370:@/tmp/.ICE-unix/1229,unix/alexander-XPS-13-9370:/tmp/.ICE-unix/1229'), ('INVOCATION_ID', '3809e9997ae54736aa91d78b00f3f906'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.BD23C2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/alexander/ros2_ws/install/new_py_pkg:/home/alexander/ros2_ws/install/new_cpp_pkg:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/alexander/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:70629e7b-737b-4fc5-acdf-98715ffe3635'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alexander/ros2_ws/src/new_cpp_pkg/build/new_cpp_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/alexander/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/alexander/ros2_ws/install/new_py_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/alexander/ros2_ws/install/new_cpp_pkg:/home/alexander/ros2_ws/install/new_py_pkg:/opt/ros/humble')]), 'shell': False}
+[12.690342] (new_cpp_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.690880] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/lib/new_cpp_pkg/cpp_node\n'}
+[12.692382] (new_cpp_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/lib/new_cpp_pkg/cpp_node" to ""\n'}
+[12.693368] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/lib/new_cpp_pkg/robot_news_station\n'}
+[12.695494] (new_cpp_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/lib/new_cpp_pkg/robot_news_station" to ""\n'}
+[12.695936] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/lib/new_cpp_pkg/smartphone\n'}
+[12.702923] (new_cpp_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/lib/new_cpp_pkg/smartphone" to ""\n'}
+[12.703223] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/ament_index/resource_index/package_run_dependencies/new_cpp_pkg\n'}
+[12.703487] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/ament_index/resource_index/parent_prefix_path/new_cpp_pkg\n'}
+[12.703815] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/environment/ament_prefix_path.sh\n'}
+[12.704081] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/environment/ament_prefix_path.dsv\n'}
+[12.704345] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/environment/path.sh\n'}
+[12.704578] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/environment/path.dsv\n'}
+[12.704770] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/local_setup.bash\n'}
+[12.704958] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/local_setup.sh\n'}
+[12.705185] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/local_setup.zsh\n'}
+[12.705416] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/local_setup.dsv\n'}
+[12.705644] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/package.dsv\n'}
+[12.705946] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/ament_index/resource_index/packages/new_cpp_pkg\n'}
+[12.706202] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/cmake/new_cpp_pkgConfig.cmake\n'}
+[12.706448] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/cmake/new_cpp_pkgConfig-version.cmake\n'}
+[12.706667] (new_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/alexander/ros2_ws/src/new_cpp_pkg/install/new_cpp_pkg/share/new_cpp_pkg/package.xml\n'}
+[12.709367] (new_cpp_pkg) CommandEnded: {'returncode': 0}
+[12.741080] (-) TimerEvent: {}
+[12.841444] (-) TimerEvent: {}
+[12.905863] (new_cpp_pkg) JobEnded: {'identifier': 'new_cpp_pkg', 'rc': 0}
+[12.906600] (-) EventReactorShutdown: {}
