@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "takeoff_test = mavros_pkg.takeoff_test:main"
+            "takeoff_test = mavros_pkg.takeoff_test:main",
+            "waypoint_test = mavros_pkg.waypoint_test:main",
         ],
     },
 )
