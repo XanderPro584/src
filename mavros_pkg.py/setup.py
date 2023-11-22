@@ -22,6 +22,9 @@ setup(
         'console_scripts': [
             "takeoff_test = mavros_pkg.takeoff_test:main",
             "waypoint_test = mavros_pkg.waypoint_test:main",
+            "start_mission = mavros_pkg.start_mission:main",
+            "arm_test = mavros_pkg.arm_test:main", 
+            "arm_test_oop = mavros_pkg.arm_test_oop:main",
         ],
     },
 )
