@@ -19,7 +19,7 @@ class StartMissionNode(Node): # MODIFY NAME
 
         self.is_armed = False 
         self.arm_attempts = 0
-        self.is_guided_mode = False
+        self.is_guided_mCommandIntode = False
         self.call_arm_server() #ATTEMPT TO ARM
 
     def push_waypoint(self, x_lat, y_long, z_alt):

@@ -25,6 +25,7 @@ setup(
             "start_mission = mavros_pkg.start_mission:main",
             "arm_test = mavros_pkg.arm_test:main", 
             "arm_test_oop = mavros_pkg.arm_test_oop:main",
+            "sync_start_mission = mavros_pkg.sync_start_mission:main",
         ],
     },
 )

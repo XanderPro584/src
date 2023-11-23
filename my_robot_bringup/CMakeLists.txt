@@ -8,8 +8,8 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY
-  launch
+install(
+  DIRECTORY launch rviz
   DESTINATION share/${PROJECT_NAME}
 )
 # uncomment the following section in order to fill in
