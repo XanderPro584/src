@@ -1,0 +1,10 @@
+
+<!-- compare this file to my_robot_bringup/launch/my_robot_gazebo.launch.xml -->
+<launch>
+
+    <node pkg="yolobot_recognition" exec="yolov8_ros2_pt.py" />
+
+    <node pkg="yolobot_recognition" exec="webcam.py" />
+
+
+</launch>

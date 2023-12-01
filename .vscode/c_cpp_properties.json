@@ -6,7 +6,7 @@
                 "${workspaceFolder}/**",
                 "/opt/ros/humble/include",
                 "/opt/ros/humble/include/rclcpp",
-                "/opt/ros/humble/include/rcl"
+                "/opt/ros/humble/include/rclpy"
             ],
             "defines": [],
             "compilerPath": "/usr/lib/ccache/gcc",

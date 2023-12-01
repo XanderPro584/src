@@ -1,9 +1,20 @@
 <?xml version="1.0"?>
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:include filename="common_properties.xacro"/>
-    <xacro:include filename="mobile_base.xacro"/>
-    <xacro:include filename="mobile_base_gazebo.xacro"/>
+    <xacro:include filename="common_properties.xacro" />
+    <xacro:include filename="mobile_base.xacro" />
+    <xacro:include filename="mobile_base_gazebo.xacro" />
 
-    <xacro:include filename="camera.xacro"/>
+    <xacro:include filename="camera.xacro" />
+
+      <!-- create a joint called  base_arm_base_joint with the origin of the arm_base_link rotate 90
+    degrees on the y-axis and transformed 0.3 in the x direction and 0.1 up -->
+
+    <joint name="mobile_base_arm_joint" type="fixed">
+        <origin xyz="${0.25*base_length} 0 ${base_height}" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="arm_base_link" />
+    </joint>
+
+    <xacro:include filename="arm.xacro" />
 </robot>

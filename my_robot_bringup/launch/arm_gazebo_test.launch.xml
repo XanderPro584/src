@@ -1,0 +1,21 @@
+<launch>
+    <let name="urdf_path" 
+         value="$(find-pkg-share my_robot_description)/urdf/standalone_arm.urdf.xacro"/>
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description"
+               value="$(command 'xacro $(var urdf_path)')"/>
+    </node>
+
+    <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
+        <arg name="world" value="$(find-pkg-share my_robot_bringup)/worlds/my_gazebo_world_v2.world"/>
+    </include>
+
+    <node pkg="gazebo_ros" exec="spawn_entity.py" args="-topic robot_description -entity my_robot"/>
+
+    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(find-pkg-share my_robot_bringup)/rviz/arm_link_urdf_config.rviz"/>
+
+    <!-- <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/> -->
+</launch>
+
+<!-- value="$(find-pkg-share my_robot_bringup)/worlds/my_gazebo_world_v2.world" -->
