@@ -34,9 +34,9 @@ class gnc_api():
         self.ns = rclpy.get_namespace()
 
         if self.ns == "/":
-            rclpy.get_logger().info(CBLUE2 + "Using default namespace" + CEND)
+            self.get_logger().info(CBLUE2 + "Using default namespace" + CEND)
         else:
-            rclpy.get_logger().info(CBLUE2 + "Using {} namespace".format(self.ns) + CEND)
+            self.get_logger().info(CBLUE2 + "Using {} namespace".format(self.ns) + CEND)
 
         self.local_pos_pub = rclpy.create_publisher(
             name="{}mavros/setpoint_position/local".format(self.ns),

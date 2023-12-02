@@ -43,7 +43,7 @@ class DroneControllerNode(Node): # MODIFY NAME
             queue_size=10,
         )
 
-        self.local_pos_sub = self.create_publisher(
+        self.local_pos_sub = self.create_subscription(
             PoseStamped, "{}mavros/local_position/pose".format(self.ns), 10)
 
         self.currentPos = self.create_subscription(
@@ -53,31 +53,31 @@ class DroneControllerNode(Node): # MODIFY NAME
             State, "{}mavros/state".format(self.ns), self.state_cb, 10, callback=self.state_cb)
         
 
-        rospy.wait_for_service("{}mavros/cmd/arming".format(self.ns))
+        self.wait_for_service("{}mavros/cmd/arming".format(self.ns))
 
         self.arming_client = rospy.ServiceProxy(
             name="{}mavros/cmd/arming".format(self.ns), service_class=CommandBool
         )
 
-        rospy.wait_for_service("{}mavros/cmd/land".format(self.ns))
+        self.wait_for_service("{}mavros/cmd/land".format(self.ns))
 
         self.land_client = rospy.ServiceProxy(
             name="{}mavros/cmd/land".format(self.ns), service_class=CommandTOL
         )
 
-        rospy.wait_for_service("{}mavros/cmd/takeoff".format(self.ns))
+        self.wait_for_service("{}mavros/cmd/takeoff".format(self.ns))
 
         self.takeoff_client = rospy.ServiceProxy(
             name="{}mavros/cmd/takeoff".format(self.ns), service_class=CommandTOL
         )
 
-        rospy.wait_for_service("{}mavros/set_mode".format(self.ns))
+        self.wait_for_service("{}mavros/set_mode".format(self.ns))
 
         self.set_mode_client = rospy.ServiceProxy(
             name="{}mavros/set_mode".format(self.ns), service_class=SetMode
         )
 
-        rospy.wait_for_service("{}mavros/cmd/command".format(self.ns))
+        self.wait_for_service("{}mavros/cmd/command".format(self.ns))
 
         self.command_client = rospy.ServiceProxy(
             name="{}mavros/cmd/command".format(self.ns), service_class=CommandLong
@@ -88,8 +88,6 @@ class DroneControllerNode(Node): # MODIFY NAME
         self.current_state_g = msg
 
     def pose_cb(self, msg):
-        self.current_pose_g = msg
-
         """Gets the raw pose of the drone and processes it for use in control.
 
         Args:

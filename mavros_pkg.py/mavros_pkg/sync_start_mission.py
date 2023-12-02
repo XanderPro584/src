@@ -10,7 +10,6 @@ from example_interfaces.srv import AddTwoInts
 from mavros_msgs.srv import CommandBool, CommandInt, SetMode, WaypointClear, WaypointPush, CommandTOL
 from mavros_msgs.msg import Waypoint, State
 
-from py_gnc_functions import *
 
 class SyncStartMissionNode(Node): # MODIFY NAME
     def __init__(self):

@@ -27,6 +27,7 @@ setup(
             "arm_test_oop = mavros_pkg.arm_test_oop:main",
             "sync_start_mission = mavros_pkg.sync_start_mission:main",
             "drone_controller = mavros_pkg.drone_controller:main",
+            "drone_pose = mavros_pkg.drone_pose:main",
         ],
     },
 )
