@@ -54,13 +54,27 @@ class DroneControllerNode(Node): # MODIFY NAME
         # self.set_mode_client = self.create_client(SetMode, "/mavros/set_mode")
         # self.command_client = self.create_client(CommandLong, "/mavros/cmd/command")
 
-        self.get_logger().info("Drone Controller Node has been initialized")
-        
-        # Connect then initialize local frame
-        if self.wait4connect() != -1:
-            self.initialize_local_frame()
+        self.set_waypoint_server = self.create_service(CommandLong, "/mavros/cmd/command", self.set_waypoint_cb)
 
-        
+        self.get_logger().info("Drone Controller Node has been initialized")
+
+        # Connect then initialize local frame
+        self.wait4connect()
+
+        self.wait4start()
+
+        self.initialize_local_frame()
+
+    def set_waypoint_cb(self, request, response):
+        # check that drone is in guided mode
+        if self.current_state_g.mode == "GUIDED":
+            self.set_destination(request.param5, request.param6, request.param7, request.param4)
+            response.success = True
+            return response
+        else:
+            response.success = False
+            return response
+    
     def state_cb(self,msg):
         self.current_state_g = msg
 
@@ -139,7 +153,6 @@ class DroneControllerNode(Node): # MODIFY NAME
         self.get_logger().info("The X-Axis is facing: {}".format(self.local_offset_g))
         self.frame_initialized = True
 
-
     def wait4connect(self):
         self.get_logger().info("Waiting for connection...")
         while not self.current_state_g.connected:
@@ -152,6 +165,99 @@ class DroneControllerNode(Node): # MODIFY NAME
             else:
                 self.get_logger().info("Connection failed")
                 return -1
+            
+    def wait4start(self):
+        self.get_logger().info("Waiting for user to set mode to GUIDED")
+        while  self.current_state_g.mode != "GUIDED":
+            rclpy.spin_once(self, timeout_sec=0.1)
+            time.sleep(0.1)
+        else:
+            if self.current_state_g.mode == "GUIDED":
+                self.get_logger().info("Mode set to GUIDED. Starting Mission...")
+                return 0
+            else:
+                self.get_logger().info("Error startting mission")
+                return -1
+        
+            
+    def set_heading(self, heading):
+        self.local_desired_heading_g = heading
+        heading = heading + self.correction_heading_g + self.local_offset_g
+
+        self.get_logger().info("The desired heading is {}".format(self.local_desired_heading_g))
+
+        yaw = radians(heading)
+        pitch = 0.0
+        roll = 0.0
+
+        cy = cos(yaw * 0.5)
+        sy = sin(yaw * 0.5)
+
+        cr = cos(roll * 0.5)
+        sr = sin(roll * 0.5)
+
+        cp = cos(pitch * 0.5)
+        sp = sin(pitch * 0.5)
+
+        qw = cy * cr * cp + sy * sr * sp
+        qx = cy * sr * cp - sy * cr * sp
+        qy = cy * cr * sp + sy * sr * cp
+        qz = sy * cr * cp - cy * sr * sp
+
+        orientation = Quaternion()
+        orientation.x = qx
+        orientation.y = qy
+        orientation.z = qz
+        orientation.w = qw
+
+        self.waypoint_g.pose.orientation = orientation
+
+    def set_destination(self, x, y, z, psi):
+        self.set_heading(psi)
+
+        theta = radians((self.correction_heading_g + self.local_offset_g - 90))
+
+        Xlocal = x * cos(theta) - y * sin(theta)
+        Ylocal = x * sin(theta) + y * cos(theta)
+        Zlocal = z
+
+        x = Xlocal + self.correction_vector_g.position.x + self.local_offset_pose_g.x
+        y = Ylocal + self.correction_vector_g.position.y + self.local_offset_pose_g.y
+        z = Zlocal + self.correction_vector_g.position.z + self.local_offset_pose_g.z
+        
+        self.get_logger().info("Destination set to x:{} y:{} z:{} origin frame".format(x, y, z))
+
+        position = Point()
+        position.x = x
+        position.y = y
+        position.z = z
+
+        self.waypoint_g.pose.position = position
+        self.local_pos_pub.publish(self.waypoint_g)
+
+    def check_waypoint_reached(self, pos_tol=0.3, head_tol=0.01):
+        self.local_pos_pub.publish(self.waypoint_g)
+
+        dx = abs(self.waypoint_g.pose.position.x - self.current_pose_g.pose.pose.position.x)
+        dy = abs(self.waypoint_g.pose.position.y - self.current_pose_g.pose.pose.position.y)
+        dz = abs(self.waypoint_g.pose.position.z - self.current_pose_g.pose.pose.position.z)
+
+        dMag = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2))
+
+        cosErr = cos(radians(self.current_heading_g)) - cos(
+            radians(self.local_desired_heading_g)
+        )
+
+        sinErr = sin(radians(self.current_heading_g)) - sin(
+            radians(self.local_desired_heading_g)
+        )
+
+        dHead = sqrt(pow(cosErr, 2) + pow(sinErr, 2))
+
+        if dMag < pos_tol and dHead < head_tol:
+            return 1
+        else:
+            return 0
 
 def main(args=None):
     rclpy.init(args=args)

@@ -16,6 +16,10 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 "msg/LedPanelState.msg"
 "msg/TurtleInfo.msg"
 "msg/TurtleInfoArray.msg"
+"action/CountUntil.action"
+"action/MoveRobot.action"
 )
+
+ament_export_dependencies(rosidl_default_runtime)
 
 ament_package()
