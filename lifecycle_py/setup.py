@@ -19,8 +19,10 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
+        # reference file names of lifecycle_py
         'console_scripts': [
             "number_publisher = lifecycle_py.number_publisher:main",
+            "lifecycle_node_manager = lifecycle_py.lifecycle_node_manager:main",
         ],
     },
 )
