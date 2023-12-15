@@ -25,9 +25,7 @@ class NumberPUblisherNode(LifecycleNode):
         self.number_timer_.cancel() #cancel the timer
         # raise Exception()
         return TransitionCallbackReturn.SUCCESS
-
-    
-    
+ 
     #Enable HW
     def on_activate(self, previous_state: LifecycleState):
         self.get_logger().info("IN on_activate")
