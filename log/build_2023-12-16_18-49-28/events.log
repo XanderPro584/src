@@ -1,0 +1,75 @@
+[0.000000] (-) TimerEvent: {}
+[0.000120] (-) JobUnselected: {'identifier': 'actions_py'}
+[0.000148] (-) JobUnselected: {'identifier': 'components_cpp'}
+[0.000521] (-) JobUnselected: {'identifier': 'components_py'}
+[0.000604] (-) JobUnselected: {'identifier': 'drone_bringup'}
+[0.000627] (-) JobUnselected: {'identifier': 'executors_cpp'}
+[0.000669] (-) JobUnselected: {'identifier': 'executors_py'}
+[0.000690] (-) JobUnselected: {'identifier': 'lifecycle_py'}
+[0.000760] (-) JobUnselected: {'identifier': 'mavros_pkg'}
+[0.000830] (-) JobUnselected: {'identifier': 'my_robot_bringup'}
+[0.000851] (-) JobUnselected: {'identifier': 'my_robot_description'}
+[0.000875] (-) JobUnselected: {'identifier': 'my_robot_interfaces'}
+[0.000893] (-) JobUnselected: {'identifier': 'new_cpp_pkg'}
+[0.000924] (-) JobUnselected: {'identifier': 'new_py_pkg'}
+[0.000944] (-) JobUnselected: {'identifier': 'turtle_interfaces'}
+[0.000964] (-) JobUnselected: {'identifier': 'turtlesim_bringup'}
+[0.001018] (-) JobUnselected: {'identifier': 'turtlesim_catch_them_all'}
+[0.001065] (-) JobUnselected: {'identifier': 'yolobot_control'}
+[0.001121] (-) JobUnselected: {'identifier': 'yolobot_description'}
+[0.001161] (-) JobUnselected: {'identifier': 'yolobot_gazebo'}
+[0.001222] (-) JobUnselected: {'identifier': 'yolobot_recognition'}
+[0.001270] (-) JobUnselected: {'identifier': 'yolov8_msgs'}
+[0.001291] (drone) JobQueued: {'identifier': 'drone', 'dependencies': OrderedDict()}
+[0.001349] (drone) JobStarted: {'identifier': 'drone'}
+[0.099866] (-) TimerEvent: {}
+[0.200124] (-) TimerEvent: {}
+[0.300395] (-) TimerEvent: {}
+[0.400663] (-) TimerEvent: {}
+[0.501167] (-) TimerEvent: {}
+[0.601507] (-) TimerEvent: {}
+[0.701771] (-) TimerEvent: {}
+[0.802032] (-) TimerEvent: {}
+[0.902297] (-) TimerEvent: {}
+[1.002564] (-) TimerEvent: {}
+[1.102838] (-) TimerEvent: {}
+[1.163757] (drone) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/drone', 'build', '--build-base', '/home/alexander/ros2_ws/src/build/drone/build', 'install', '--record', '/home/alexander/ros2_ws/src/build/drone/install.log', '--single-version-externally-managed'], 'cwd': '/home/alexander/ros2_ws/src/drone', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/home/alexander/gz_ws/src/ardupilot_gazebo/models:/home/alexander/gz_ws/src/ardupilot_gazebo/worlds:/home/alexander/gz_ws/src/ardupilot_gazebo/models:/home/alexander/gz_ws/src/ardupilot_gazebo/worlds:/home/alexander/gz_ws/src/ardupilot_gazebo/models:/home/alexander/gz_ws/src/ardupilot_gazebo/worlds:', 'USER': 'alexander', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/alexander/ros2_ws/install/yolov8_msgs/lib:/home/alexander/ros2_ws/install/turtle_interfaces/lib:/home/alexander/ros2_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/alexander', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/alexander/ros2_ws', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1098', 'SYSTEMD_EXEC_PID': '1294', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '24762', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/alexander/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'alexander', 'JOURNAL_STREAM': '8:25289', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'alexander', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/home/alexander/ardupilot_gazebo/models', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/usr/lib/ccache:/usr/lib/ccache:/opt/ros/humble/bin:/home/alexander/anaconda3/condabin:/usr/lib/ccache:/usr/lib/ccache:/home/alexander/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/alexander/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/alexander/ardupilot/Tools/autotest:/home/alexander/Micro-XRCE-DDS-Gen/scripts:/home/alexander/ardupilot/Tools/autotest:/home/alexander/Micro-XRCE-DDS-Gen/scripts:/home/alexander/ardupilot/Tools/autotest:/home/alexander/Micro-XRCE-DDS-Gen/scripts', 'SESSION_MANAGER': 'local/alexander-XPS-13-9370:@/tmp/.ICE-unix/1252,unix/alexander-XPS-13-9370:/tmp/.ICE-unix/1252', 'INVOCATION_ID': '456fce0342034aa290abc216032f5028', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.KALRF2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/alexander/ros2_ws/install/executors_cpp:/home/alexander/ros2_ws/install/components_py:/home/alexander/ros2_ws/install/components_cpp:/home/alexander/ros2_ws/install/executors_py:/home/alexander/ros2_ws/install/yolov8_msgs:/home/alexander/ros2_ws/install/drone_bringup:/home/alexander/ros2_ws/install/yolobot_recognition:/home/alexander/ros2_ws/install/yolobot_gazebo:/home/alexander/ros2_ws/install/yolobot_description:/home/alexander/ros2_ws/install/yolobot_control:/home/alexander/ros2_ws/install/turtlesim_catch_them_all:/home/alexander/ros2_ws/install/turtlesim_bringup:/home/alexander/ros2_ws/install/turtle_interfaces:/home/alexander/ros2_ws/install/my_robot_bringup:/home/alexander/ros2_ws/install/new_py_pkg:/home/alexander/ros2_ws/install/new_cpp_pkg:/home/alexander/ros2_ws/install/actions_py:/home/alexander/ros2_ws/install/my_robot_interfaces:/home/alexander/ros2_ws/install/my_robot_description:/home/alexander/ros2_ws/install/mavros_pkg:/home/alexander/ros2_ws/install/lifecycle_py:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/alexander/anaconda3/bin/python', 'SHELL': '/bin/bash', 'IGN_GAZEBO_SYSTEM_PLUGIN_PATH': '/usr/lib/x85_64-linux-gnu/gz-sim-7/plugins', 'TERMINATOR_UUID': 'urn:uuid:8e551e69-74b4-4ac0-8e53-7b97dfac3fbc', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/alexander/ros2_ws/src/build/drone', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/alexander/anaconda3/bin/conda', 'GAZEBO_PLUGIN_PATH': ':/opt/ros/humble/lib:/opt/ros/humble/lib:/opt/ros/humble/lib', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/alexander/ros2_ws/src/build/drone/prefix_override:/home/alexander/ros2_ws/src/install/drone/lib/python3.10/site-packages:/home/alexander/ros2_ws/build/components_py:/home/alexander/ros2_ws/install/components_py/lib/python3.10/site-packages:/home/alexander/ros2_ws/build/executors_py:/home/alexander/ros2_ws/install/executors_py/lib/python3.10/site-packages:/home/alexander/ros2_ws/install/yolov8_msgs/local/lib/python3.10/dist-packages:/home/alexander/ros2_ws/install/turtlesim_catch_them_all/lib/python3.10/site-packages:/home/alexander/ros2_ws/install/turtle_interfaces/local/lib/python3.10/dist-packages:/home/alexander/ros2_ws/install/new_py_pkg/lib/python3.10/site-packages:/home/alexander/ros2_ws/install/actions_py/lib/python3.10/site-packages:/home/alexander/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/alexander/ros2_ws/install/mavros_pkg/lib/python3.10/site-packages:/home/alexander/ros2_ws/build/lifecycle_py:/home/alexander/ros2_ws/install/lifecycle_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/usr/local/lib/python3.10/dist-packages/tensorflow/models/research:/usr/local/lib/python3.10/dist-packages/tensorflow/models/research:/usr/local/lib/python3.10/dist-packages/tensorflow/models/research', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/alexander/ros2_ws/install/executors_cpp:/home/alexander/ros2_ws/install/components_cpp:/home/alexander/ros2_ws/install/yolov8_msgs:/home/alexander/ros2_ws/install/drone_bringup:/home/alexander/ros2_ws/install/yolobot_recognition:/home/alexander/ros2_ws/install/yolobot_gazebo:/home/alexander/ros2_ws/install/yolobot_description:/home/alexander/ros2_ws/install/yolobot_control:/home/alexander/ros2_ws/install/turtlesim_bringup:/home/alexander/ros2_ws/install/turtle_interfaces:/home/alexander/ros2_ws/install/my_robot_bringup:/home/alexander/ros2_ws/install/new_cpp_pkg:/home/alexander/ros2_ws/install/my_robot_interfaces:/home/alexander/ros2_ws/install/my_robot_description'}, 'shell': False}
+[1.202963] (-) TimerEvent: {}
+[1.303235] (-) TimerEvent: {}
+[1.403512] (-) TimerEvent: {}
+[1.490018] (drone) StdoutLine: {'line': b'running egg_info\n'}
+[1.490433] (drone) StdoutLine: {'line': b'creating ../build/drone/drone.egg-info\n'}
+[1.490739] (drone) StdoutLine: {'line': b'writing ../build/drone/drone.egg-info/PKG-INFO\n'}
+[1.491008] (drone) StdoutLine: {'line': b'writing dependency_links to ../build/drone/drone.egg-info/dependency_links.txt\n'}
+[1.491181] (drone) StdoutLine: {'line': b'writing entry points to ../build/drone/drone.egg-info/entry_points.txt\n'}
+[1.491356] (drone) StdoutLine: {'line': b'writing requirements to ../build/drone/drone.egg-info/requires.txt\n'}
+[1.491448] (drone) StdoutLine: {'line': b'writing top-level names to ../build/drone/drone.egg-info/top_level.txt\n'}
+[1.491738] (drone) StdoutLine: {'line': b"writing manifest file '../build/drone/drone.egg-info/SOURCES.txt'\n"}
+[1.493357] (drone) StdoutLine: {'line': b"reading manifest file '../build/drone/drone.egg-info/SOURCES.txt'\n"}
+[1.494057] (drone) StdoutLine: {'line': b"writing manifest file '../build/drone/drone.egg-info/SOURCES.txt'\n"}
+[1.494264] (drone) StdoutLine: {'line': b'running build\n'}
+[1.494460] (drone) StdoutLine: {'line': b'running build_py\n'}
+[1.494633] (drone) StdoutLine: {'line': b'creating /home/alexander/ros2_ws/src/build/drone/build\n'}
+[1.494703] (drone) StdoutLine: {'line': b'creating /home/alexander/ros2_ws/src/build/drone/build/lib\n'}
+[1.494765] (drone) StdoutLine: {'line': b'creating /home/alexander/ros2_ws/src/build/drone/build/lib/drone\n'}
+[1.494825] (drone) StdoutLine: {'line': b'copying drone/__init__.py -> /home/alexander/ros2_ws/src/build/drone/build/lib/drone\n'}
+[1.494898] (drone) StdoutLine: {'line': b'running install\n'}
+[1.495039] (drone) StdoutLine: {'line': b'running install_lib\n'}
+[1.495772] (drone) StdoutLine: {'line': b'creating /home/alexander/ros2_ws/src/install/drone/lib/python3.10/site-packages/drone\n'}
+[1.495960] (drone) StdoutLine: {'line': b'copying /home/alexander/ros2_ws/src/build/drone/build/lib/drone/__init__.py -> /home/alexander/ros2_ws/src/install/drone/lib/python3.10/site-packages/drone\n'}
+[1.496398] (drone) StdoutLine: {'line': b'byte-compiling /home/alexander/ros2_ws/src/install/drone/lib/python3.10/site-packages/drone/__init__.py to __init__.cpython-310.pyc\n'}
+[1.496587] (drone) StdoutLine: {'line': b'running install_data\n'}
+[1.497190] (drone) StdoutLine: {'line': b'creating /home/alexander/ros2_ws/src/install/drone/share/ament_index\n'}
+[1.497268] (drone) StdoutLine: {'line': b'creating /home/alexander/ros2_ws/src/install/drone/share/ament_index/resource_index\n'}
+[1.497384] (drone) StdoutLine: {'line': b'creating /home/alexander/ros2_ws/src/install/drone/share/ament_index/resource_index/packages\n'}
+[1.497479] (drone) StdoutLine: {'line': b'copying resource/drone -> /home/alexander/ros2_ws/src/install/drone/share/ament_index/resource_index/packages\n'}
+[1.497546] (drone) StdoutLine: {'line': b'copying package.xml -> /home/alexander/ros2_ws/src/install/drone/share/drone\n'}
+[1.497604] (drone) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.499160] (drone) StdoutLine: {'line': b'Copying ../build/drone/drone.egg-info to /home/alexander/ros2_ws/src/install/drone/lib/python3.10/site-packages/drone-0.0.0-py3.10.egg-info\n'}
+[1.499944] (drone) StdoutLine: {'line': b'running install_scripts\n'}
+[1.503622] (-) TimerEvent: {}
+[1.520442] (drone) StdoutLine: {'line': b"writing list of installed files to '/home/alexander/ros2_ws/src/build/drone/install.log'\n"}
+[1.551618] (drone) CommandEnded: {'returncode': 0}
+[1.603750] (-) TimerEvent: {}
+[1.628290] (drone) JobEnded: {'identifier': 'drone', 'rc': 0}
+[1.628871] (-) EventReactorShutdown: {}
