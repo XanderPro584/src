@@ -15,7 +15,7 @@ class WaypointSenderNode(Node):
         self.go_to_waypoint_client = ActionClient(self, GoToWaypoint, "go_to_waypoint")
         self.get_logger().info("Waypoint Sender Node has been started")
 
-        # self.cancel_timer = self.create_timer(6.0, self.cancel_goal)
+        self.cancel_timer = self.create_timer(5.0, self.cancel_goal)
 
     def send_goal(self, target_waypoint):
         self.go_to_waypoint_client.wait_for_server()
@@ -31,7 +31,7 @@ class WaypointSenderNode(Node):
         self.get_logger().info("Current Position: " + str(feedback_msg.feedback.current_position))
 
     def goal_response_callback(self, future):
-        self.goal_handle = future.result()
+        self.goal_handle: ClientGoalHandle = future.result()
         if self.goal_handle.accepted:
             self.get_logger().info("Goal accepted")
             self.goal_handle.get_result_async().\
@@ -68,34 +68,12 @@ def main(args=None):
     node = WaypointSenderNode() 
     target_waypoint = LocalWaypoint()
     #make a square
-    target_waypoint.x = 100.0
+    target_waypoint.x = 300.0
     target_waypoint.y = 0.0
     target_waypoint.z = 5.0
     target_waypoint.psi = -90.0
     node.send_goal(target_waypoint)
     time.sleep(0.1)
-
-    target_waypoint.x = 100.0
-    target_waypoint.y = 100.0
-    target_waypoint.z = 5.0
-    target_waypoint.psi = 0.0
-    node.send_goal(target_waypoint)
-    time.sleep(0.1)
-
-
-    target_waypoint.x = 0.0
-    target_waypoint.y = 100.0
-    target_waypoint.z = 5.0
-    target_waypoint.psi = 90.0
-    node.send_goal(target_waypoint)
-    time.sleep(0.1)
-
-
-    target_waypoint.x = 0.0
-    target_waypoint.y = 0.0
-    target_waypoint.z = 5.0
-    target_waypoint.psi = 180.0
-    node.send_goal(target_waypoint)
 
 
     rclpy.spin(node)
