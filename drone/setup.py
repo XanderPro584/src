@@ -20,6 +20,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'drone_pose = drone.drone_pose:main',
+            'waypoint_sender = drone.waypoint_sender:main',
+            'global_pose_sub = drone.global_pose_sub:main',
+            'drone_pose_copy = drone.drone_pose_copy:main',
         ],
     },
 )

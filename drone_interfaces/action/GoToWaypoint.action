@@ -1,0 +1,8 @@
+# Goal
+LocalWaypoint goal_position
+---
+# Result
+LocalWaypoint final_position
+---
+# Feedback
+LocalWaypoint current_position
