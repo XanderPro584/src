@@ -15,7 +15,7 @@ class WaypointSenderNode(Node):
         self.go_to_waypoint_client = ActionClient(self, GoToWaypoint, "go_to_waypoint")
         self.get_logger().info("Waypoint Sender Node has been started")
 
-        self.cancel_timer = self.create_timer(5.0, self.cancel_goal)
+        # self.cancel_timer = self.create_timer(5.0, self.cancel_goal)
 
     def send_goal(self, target_waypoint):
         self.go_to_waypoint_client.wait_for_server()

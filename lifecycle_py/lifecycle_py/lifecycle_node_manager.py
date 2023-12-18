@@ -12,7 +12,7 @@ class LifecycleNodeManager(Node):
         node_name = self.get_parameter("managed_node_name").value
         service_change_state_name = "/" + node_name + "/change_state"
         self.client = self.create_client(ChangeState, service_change_state_name)
-        
+    
     def change_state(self, transition: Transition):
         self.client.wait_for_service()
         request = ChangeState.Request()

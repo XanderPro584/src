@@ -17,9 +17,8 @@ from math import atan2, pow, sqrt, degrees, radians, sin, cos
 from math import atan2, pow, sqrt, degrees, radians, sin, cos
 from geometry_msgs.msg import Pose, PoseStamped, Point, Quaternion
 from nav_msgs.msg import Odometry
-from mavros_msgs.msg import State
-from mavros_msgs.srv import CommandTOL, CommandLong, CommandBool, SetMode
-from example_interfaces.msg import Float64
+from example_interfaces.msg import Float64, Bool
+
 
 from drone_interfaces.action import GoToWaypoint
 from drone_interfaces.msg import LocalWaypoint
@@ -31,38 +30,30 @@ from rclpy.executors import MultiThreadedExecutor
 from rclpy.callback_groups import ReentrantCallbackGroup
 import threading
 
-class DronePoseCopy(LifecycleNode):
+class DronePose(LifecycleNode):
 
     def __init__(self):
-        super().__init__('drone_pose_copy')
+        super().__init__('drone_pose')
         self.get_logger().info('Drone Pose Node started')
+        # INITIALIZE VARIABLES
 
-    # Lifecycle Node Functions
-    def on_configure(self, state: LifecycleState) -> TransitionCallbackReturn:
-        self.get_logger().info('Configuring')
         # Volatile Quality of Service profile
-        qos_profile = QoSProfile(
+        self.volatile_qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.VOLATILE,
             history=HistoryPolicy.KEEP_LAST,
             depth=1
         )
 
+        # Reliable Quality of Service profile
+        
         # LOCAL FRAME INITIALIZATION    
         self.frame_initialized = False
         self.current_pose_g = Odometry()
         self.current_heading_g = 0.0
         self.local_offset_g = 0.0
+        self.gps_fix = False
 
-        # set up publishers and subscribers
-        self.local_position_pub = self.create_lifecycle_publisher(
-            Point, "/local_position", qos_profile=qos_profile)
-        self.current_heading_pub = self.create_lifecycle_publisher(
-            Float64, "/local_heading", qos_profile=qos_profile)
-        self.currentPos = self.create_subscription(
-            Odometry, "/mavros/global_position/local", self.pose_cb, qos_profile=qos_profile,)
-        
-        self.get_logger().info('Getting ready to initialize local frame ...')
         self.ready_to_initialize = False
         self.current_pose_list = []
 
@@ -72,9 +63,40 @@ class DronePoseCopy(LifecycleNode):
         self.local_desired_heading_g = 0.0
         self.waypoint_server_is_activated = False
 
+        self.goal_queue = []
+        self.goal_lock = threading.Lock()
+        self.goal_handle: ServerGoalHandle = None
+
+        self.ready_to_initialize_pub = self.create_publisher(
+            Bool, "/ready_to_activate", qos_profile=10)
+
+    # Lifecycle Node Functions
+    def on_configure(self, state: LifecycleState) -> TransitionCallbackReturn:
+        self.get_logger().info('Configuring')
+
+        # set up publishers and subscribers
+        # Check for GPS fix, this message is not used for anything else
+        self.gps_pos_check = self.create_subscription(
+            PoseStamped, "/mavros/local_position/pose", self.gps_pos_check_cb, qos_profile=self.volatile_qos_profile) 
+        # self.get_logger().info("initialized gps_pos_check")
+
+        self.local_position_pub = self.create_lifecycle_publisher(
+            Point, "/local_position", qos_profile=self.volatile_qos_profile)
+        # self.get_logger().info("initialized local_position_pub")
+        
+        self.current_heading_pub = self.create_lifecycle_publisher(
+            Float64, "/local_heading", qos_profile=self.volatile_qos_profile)
+        # self.get_logger().info("initialized current_heading_pub")
+
+        self.currentPos = self.create_subscription(
+            Odometry, "/mavros/global_position/local", self.pose_cb, qos_profile=self.volatile_qos_profile,)
+        # self.get_logger().info("initialized currentPos")
+
         # Waypoint publisher
         self.local_pos_pub = self.create_lifecycle_publisher(
-            PoseStamped, "/mavros/setpoint_position/local", qos_profile=qos_profile)
+            PoseStamped, "/mavros/setpoint_position/local", qos_profile=self.volatile_qos_profile)
+
+        self.get_logger().info('Getting ready to initialize local frame ...')
         
         self.go_to_waypoint_server = ActionServer(
             self,
@@ -85,10 +107,6 @@ class DronePoseCopy(LifecycleNode):
             execute_callback=self.go_to_waypoint_execute_callback,
             cancel_callback=self.go_to_waypoint_cancel_callback,
             callback_group=ReentrantCallbackGroup(),)
-        
-        self.goal_queue = []
-        self.goal_lock = threading.Lock()
-        self.goal_handle: ServerGoalHandle = None
 
         return TransitionCallbackReturn.SUCCESS
     
@@ -188,6 +206,10 @@ class DronePoseCopy(LifecycleNode):
         self.local_position_pub.destroy()
         self.current_heading_pub.destroy()
         self.currentPos.destroy()
+        self.local_pos_pub.destroy()
+        self.gps_pos_check.destroy()
+        self.ready_to_initialize_pub.destroy()
+        self.go_to_waypoint_server.destroy()
 
         return TransitionCallbackReturn.SUCCESS
 
@@ -208,6 +230,7 @@ class DronePoseCopy(LifecycleNode):
         self.current_pose_list = []
 
         self.frame_initialized = False
+        self.gps_fix = False
         self.goal_queue = []
         self.goal_handle = None
         self.waypoint_server_is_activated = False
@@ -299,8 +322,8 @@ class DronePoseCopy(LifecycleNode):
 
         dHead = sqrt(pow(cosErr, 2) + pow(sinErr, 2))
 
-        self.get_logger().info("dMag: {}".format(dMag))
-        self.get_logger().info("dHead: {}".format(dHead))
+        # self.get_logger().info("dMag: {}".format(dMag))
+        # self.get_logger().info("dHead: {}".format(dHead))
 
         if dMag < pos_tol and dHead < head_tol:
             return 1
@@ -312,13 +335,17 @@ class DronePoseCopy(LifecycleNode):
     def pose_cb(self, msg):
         self.current_pose_g = msg
 
-        if len(self.current_pose_list) >= 10:
-            if self.ready_to_initialize == False:
-                self.get_logger().info("Ready to initialize")
-            self.ready_to_initialize = True
-            self.current_pose_list.pop(0)
+        if self.gps_fix:
+            if len(self.current_pose_list) >= 10:
+                if self.ready_to_initialize == False:
+                    self.get_logger().info("Ready to initialize")
+                    self.ready_to_initialize = True
 
-        self.current_pose_list.append(self.current_pose_g)
+                self.current_pose_list.pop(0)
+                self.ready_to_initialize_pub.publish(Bool(data=True))
+
+
+            self.current_pose_list.append(self.current_pose_g)
 
         q0, q1, q2, q3 = (
             self.current_pose_g.pose.pose.orientation.w,
@@ -335,6 +362,11 @@ class DronePoseCopy(LifecycleNode):
             self.current_heading_pub.publish(Float64(data=self.current_heading_g))
             local_position = self.get_local_position()
             self.local_position_pub.publish(local_position)
+
+    def gps_pos_check_cb(self, msg):
+        if self.gps_fix == False:
+            self.gps_fix = True      
+            self.get_logger().info("GPS fix acquired")  
 
     def get_local_position(self):
         x = self.current_pose_g.pose.pose.position.x
@@ -381,7 +413,7 @@ class DronePoseCopy(LifecycleNode):
 
 def main(args=None):
     rclpy.init(args=args)
-    drone_pose = DronePoseCopy()
+    drone_pose = DronePose()
     rclpy.spin(drone_pose, MultiThreadedExecutor())
     drone_pose.destroy_node()
     rclpy.shutdown()
