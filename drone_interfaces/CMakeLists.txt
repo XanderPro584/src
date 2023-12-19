@@ -12,6 +12,8 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME} 
   # Msgs
   "msg/LocalWaypoint.msg"
+  "msg/InferenceResult.msg"
+  "msg/Yolov8Inference.msg"
 
   # Srvs
 
