@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="yolobot_recognition" exec="yolov8_ros2_pt.py" >
+        <param name="raw_image_topic" value="/camera/image_raw" />
+    </node>
+
+    <include file="$(find-pkg-share drone_bringup)/launch/hills.launch.xml"/>
+
+    <node pkg="drone" exec="drone_pose"/>
+    <node pkg="drone" exec="drone_lifecycle_manager"/>
+
+</launch>

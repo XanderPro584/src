@@ -18,11 +18,15 @@ class Camera_subscriber(Node):
 
         self.model = YOLO('~/yolobot/src/yolobot_recognition/scripts/yolov8n.pt')
 
+        # declare parameter for raw image topic
+        self.declare_parameter('raw_image_topic', '/camera/image_raw')
+        self.raw_image_topic = self.get_parameter('raw_image_topic').value
+
         self.yolov8_inference = Yolov8Inference()
 
         self.subscription = self.create_subscription(
             Image,
-            'image/bgr',
+            self.raw_image_topic,
             self.camera_callback,
             10)
         self.subscription 

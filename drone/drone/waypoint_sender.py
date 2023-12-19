@@ -7,6 +7,7 @@ from drone_interfaces.msg import LocalWaypoint
 
 from rclpy.action import ActionClient
 from rclpy.action.client import ClientGoalHandle, GoalStatus
+from mavros_msgs.srv import CommandBool
 
 
 class WaypointSenderNode(Node): 
@@ -15,7 +16,11 @@ class WaypointSenderNode(Node):
         self.go_to_waypoint_client = ActionClient(self, GoToWaypoint, "go_to_waypoint")
         self.get_logger().info("Waypoint Sender Node has been started")
 
-        # self.cancel_timer = self.create_timer(5.0, self.cancel_goal)
+        # self.cancel_timer = self.create_timer(40, self.cancel_all_goals_cb)
+
+        #Client to cancel all goals, reference drone_pose.py
+        self.cancel_all_goals_client = self.create_client(
+            CommandBool, "/cancel_all_goals")
 
     def send_goal(self, target_waypoint):
         self.go_to_waypoint_client.wait_for_server()
@@ -61,19 +66,56 @@ class WaypointSenderNode(Node):
         #destroy timer
         self.cancel_timer.destroy()
 
+    def cancel_all_goals_cb(self):
+        #destroy timer
+        self.cancel_timer.destroy()
+        self.get_logger().info("Canceling all goals")
+        self.cancel_all_goals_client.wait_for_service()
+        request = CommandBool.Request()
+        request.value = True
+        future = self.cancel_all_goals_client.call_async(request)
+        rclpy.spin_until_future_complete(self, future)
+        response = future.result()
+        if response.success:
+            self.get_logger().info("All goals canceled")
+        else:
+            self.get_logger().info("Failed to cancel all goals")
+
 
 
 def main(args=None):
     rclpy.init(args=args)
     node = WaypointSenderNode() 
     target_waypoint = LocalWaypoint()
-    #make a square
-    target_waypoint.x = 300.0
+    # Make an octogon using coordinates x and y starting at 0,0
+    target_waypoint.x = 0.0
     target_waypoint.y = 0.0
-    target_waypoint.z = 5.0
-    target_waypoint.psi = -90.0
+    target_waypoint.z = 20.0
+    target_waypoint.psi = 0.0
     node.send_goal(target_waypoint)
     time.sleep(0.1)
+
+    target_waypoint.x = 0.0
+    target_waypoint.y = 100.0
+    target_waypoint.psi = 0.0
+
+    node.send_goal(target_waypoint)
+    time.sleep(0.1)
+
+    target_waypoint.x = 100.0
+    target_waypoint.y = 100.0
+    target_waypoint.psi = -90.0
+
+    node.send_goal(target_waypoint)
+    time.sleep(0.1)
+
+    target_waypoint.x = 100.0
+    target_waypoint.y = 0.0
+    target_waypoint.psi = 180.0
+    node.send_goal(target_waypoint)
+    time.sleep(0.1)
+
+
 
 
     rclpy.spin(node)
