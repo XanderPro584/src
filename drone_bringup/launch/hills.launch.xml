@@ -1,7 +1,7 @@
 <launch>
     <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
     <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
-      <arg name="world" value="$(find-pkg-share drone_bringup)/worlds/hills3.world"/>
+      <arg name="world" value="$(find-pkg-share drone_bringup)/worlds/hills.world"/>
       <!-- more default parameters can be changed here -->
     </include>
 

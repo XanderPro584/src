@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="drone_yolo" exec="yolov8_ros2_pt" >
+    <node pkg="yolobot_recognition" exec="yolov8_ros2_pt.py" >
         <param name="raw_image_topic" value="/camera/image_raw" />
     </node>
 

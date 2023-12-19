@@ -23,6 +23,10 @@ class DroneLifecycleNodeManager(Node):
         # Subscriber for starting drone_pose node
         self.initialize_drone_pose_lifecycle_node_sub = self.create_subscription(
             Bool, "/initialize_drone_pose", self.initialize_drone_pose_lifecycle_node, qos_profile=10, )
+        
+        # Publisher that says when the drone_pose node is activated
+        self.drone_pose_is_activated_pub = self.create_publisher(
+            Bool, "/drone_pose_is_activated", qos_profile=10)
 
         # self.initialize_drone_pose_lifecycle_node(True)
 
@@ -83,9 +87,6 @@ class DroneLifecycleNodeManager(Node):
             self.get_logger().info("Ready to Actvate")
             self.activate_(self.drone_pose_client)
             self.drone_pose_is_activated = True
-            # Publisher that says when the drone_pose node is activated
-            self.drone_pose_is_activated_pub = self.create_publisher(
-                Bool, "/drone_pose_is_activated", qos_profile=10)
 
             self.drone_pose_is_activated_pub.publish(Bool(data=True))
 

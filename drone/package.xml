@@ -14,6 +14,9 @@
   <depend>example_interfaces</depend>
   <depend>mavros_msgs</depend>
   <depend>drone_interfaces</depend>
+  <depend>std_msgs</depend> 
+  <depend>sensor_msgs</depend>
+  <depend>yolbot_recognition</depend>
 
 
   <test_depend>ament_copyright</test_depend>

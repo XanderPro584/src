@@ -26,6 +26,7 @@ setup(
             'drone_pose_copy = drone.drone_pose_copy:main',
             'local_pose_sub = drone.local_pose_sub:main',
             'drone_lifecycle_manager = drone.drone_lifecycle_manager:main',
+            'search_and_rescue = drone.search_and_rescue:main',
         ],
     },
 )

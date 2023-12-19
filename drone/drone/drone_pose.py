@@ -165,9 +165,9 @@ class DronePose(LifecycleNode):
             local_position.psi = self.current_heading_g
 
             # Check if the goal has been cancelled
-            if not goal_handle.is_active or self.abort_current_goal or self.waypoint_server_is_activated == False:
+            if self.abort_current_goal:
                 self.abort_current_goal = False
-                self.get_logger().info("Goal aborted")
+                self.get_logger().info("Goal aborted because self.abort_current_goal=true")
                 goal_handle.abort()
                 result.final_position = local_position
                 self.process_next_goal_in_queue()
@@ -176,6 +176,20 @@ class DronePose(LifecycleNode):
                 goal_handle.canceled()
                 self.cancel_goal()
                 self.get_logger().info("Goal cancelled")
+                result.final_position = local_position
+                self.process_next_goal_in_queue()
+                return result
+            if not goal_handle.is_active:
+                self.abort_current_goal = False
+                self.get_logger().info("Goal aborted because goal_handle is not active")
+                goal_handle.abort()
+                result.final_position = local_position
+                self.process_next_goal_in_queue()
+                return result
+            if self.waypoint_server_is_activated == False:
+                self.abort_current_goal = False
+                self.get_logger().info("Goal aborted because waypoint server is not activated")
+                goal_handle.abort()
                 result.final_position = local_position
                 self.process_next_goal_in_queue()
                 return result
