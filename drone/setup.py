@@ -27,6 +27,11 @@ setup(
             'local_pose_sub = drone.local_pose_sub:main',
             'drone_lifecycle_manager = drone.drone_lifecycle_manager:main',
             'search_and_rescue = drone.search_and_rescue:main',
+            'orbit = drone.orbit:main',
+            'ready_drone = drone.ready_drone:main',
+            'go_to_waypoint = drone.go_to_waypoint:main',
+            'drone_position = drone.drone_position:main',
+            'set_cmd_vel = drone.set_cmd_vel:main',
         ],
     },
 )

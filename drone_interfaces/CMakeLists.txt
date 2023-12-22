@@ -12,13 +12,14 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME} 
   # Msgs
   "msg/LocalWaypoint.msg"
-  "msg/InferenceResult.msg"
-  "msg/Yolov8Inference.msg"
+  "msg/LocalFrameOffsets.msg"
 
   # Srvs
-
+  "srv/CommandVelocity.srv"
+  
   # Actions
   "action/GoToWaypoint.action"
+  "action/ReadyDrone.action"
 )
 
 ament_export_dependencies(rosidl_default_runtime)

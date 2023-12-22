@@ -16,14 +16,15 @@ class WaypointSenderNode(Node):
         self.go_to_waypoint_client = ActionClient(self, GoToWaypoint, "go_to_waypoint")
         self.get_logger().info("Waypoint Sender Node has been started")
 
-        # self.cancel_timer = self.create_timer(40, self.cancel_all_goals_cb)
+        self.cancel_timer = self.create_timer(15, self.cancel_all_goals_cb)
 
         #Client to cancel all goals, reference drone_pose.py
         self.cancel_all_goals_client = self.create_client(
             CommandBool, "/cancel_all_goals")
 
     def send_goal(self, target_waypoint):
-        self.go_to_waypoint_client.wait_for_server()
+        while not self.go_to_waypoint_client.wait_for_server(1):
+            self.get_logger().info("Waiting for go to waypoint action server...")
         goal_msg = GoToWaypoint.Goal()
         goal_msg.goal_position = target_waypoint
         # log the goal position that it is sending
@@ -70,7 +71,8 @@ class WaypointSenderNode(Node):
         #destroy timer
         self.cancel_timer.destroy()
         self.get_logger().info("Canceling all goals")
-        self.cancel_all_goals_client.wait_for_service()
+        while not self.cancel_all_goals_client.wait_for_service(1):
+            self.get_logger().warn("Waiting for cancel all goals service...")
         request = CommandBool.Request()
         request.value = True
         future = self.cancel_all_goals_client.call_async(request)

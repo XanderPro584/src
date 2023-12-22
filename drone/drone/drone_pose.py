@@ -62,7 +62,6 @@ class DronePose(LifecycleNode):
         self.current_pose_list = []
 
         # WAYPOINT ACTION SERVER INITIALIZATION
-        self.correction_vector_g = Pose()
         self.waypoint_g = PoseStamped()
         self.local_desired_heading_g = 0.0
         self.waypoint_server_is_activated = False

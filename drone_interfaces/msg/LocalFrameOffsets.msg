@@ -1,0 +1,3 @@
+float64 rotation_theta
+float64 translation_x
+float64 translation_y

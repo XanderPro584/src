@@ -45,7 +45,6 @@ class SearchAndRescueNode(Node):
         self.drone_pose_is_activated_sub = self.create_subscription(
             Bool, "/drone_pose_is_activated", self.drone_pose_is_activated_callback, 10)
         
-        self.get_logger().info("Done initializing publishers and subscribers")
 
         self.initialize_drone_pose_lifecycle_node(True)
     
