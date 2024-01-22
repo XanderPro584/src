@@ -14,6 +14,8 @@ from geometry_msgs.msg import Twist
 from drone_interfaces.srv import CommandVelocity
 # import local frame offsets
 from drone_interfaces.msg import LocalFrameOffsets
+# import float64
+from example_interfaces.msg import Float64
 
 # import math and pi
 from math import atan2, pow, sqrt, degrees, radians, sin, cos, pi
@@ -26,11 +28,12 @@ class SetCmdVelNode(Node):
         self.get_logger().info("Set Cmd Vel Node has been started")
         self.command_velocity = CommandVelocity.Request()
         self.local_frame_offsets = LocalFrameOffsets()
+        self.current_heading = Float64(data=0.0)
         self.rotation_theta = 0.0
         self.translation_x = 0.0
         self.translation_y = 0.0
         self.max_linear_velocity = 13.0
-        self.max_angular_velocity = pi/3.0
+        self.max_angular_velocity = 60.0
         self.publishing_cmd_vel = False
 
         # Volatile Quality of Service profile
@@ -46,6 +49,8 @@ class SetCmdVelNode(Node):
         # Local frame offset subscriber
         self.local_frame_offsets_sub = self.create_subscription(
             LocalFrameOffsets, "/local_frame_offsets", self.local_frame_offsets_cb, self.volatile_qos_profile)
+        self.current_heading_sub = self.create_subscription(
+            Float64, "/local_heading", self.current_heading_cb, self.volatile_qos_profile)
         
         # Command velocity server
         self.cmd_vel_server = self.create_service(
@@ -123,15 +128,15 @@ class SetCmdVelNode(Node):
         original_cmd_vel.linear.x = original_x_y[0]
         original_cmd_vel.linear.y = original_x_y[1]
         original_cmd_vel.linear.z = self.command_velocity.linear_z
-        original_cmd_vel.angular.x = self.command_velocity.angular_x
-        original_cmd_vel.angular.y = self.command_velocity.angular_y
-        original_cmd_vel.angular.z = self.command_velocity.angular_z
+        original_cmd_vel.angular.x = radians(self.command_velocity.angular_x)
+        original_cmd_vel.angular.y = radians(self.command_velocity.angular_y)
+        original_cmd_vel.angular.z = radians(self.command_velocity.angular_z)
 
         return original_cmd_vel
 
     def transform_point(self, x, y):
         # Apply rotation first and then translation
-        theta = radians(self.rotation_theta - 90)
+        theta = radians(self.rotation_theta + self.current_heading - 90)
         rotation_matrix = np.array([[cos(theta), -sin(theta)],
                                     [sin(theta), cos(theta)]])
         rotated_point = np.dot(rotation_matrix, np.array([x, y]))
@@ -140,20 +145,12 @@ class SetCmdVelNode(Node):
 
         return translated_point
     
-    def inverse_transform_point(self, x, y):
-        # Apply inverse translation first and then inverse rotation
-        inverse_translated_point = np.array([x, y]) - np.array([self.translation_x, self.translation_y])
-
-        theta = radians(-(self.rotation_theta - 90))
-        inverse_rotation_matrix = np.array([[cos(theta), -sin(theta)],
-                                           [sin(theta), cos(theta)]])
-        inverse_rotated_point = np.dot(inverse_rotation_matrix, inverse_translated_point)
-
-        return inverse_rotated_point
-    
     def local_frame_offsets_cb(self, msg):
         self.local_frame_offsets = msg
         self.rotation_theta = self.local_frame_offsets.rotation_theta
+
+    def current_heading_cb(self, msg):
+        self.current_heading = msg.data
 
         
 

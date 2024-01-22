@@ -5,7 +5,7 @@
 
     <include file="$(find-pkg-share drone_bringup)/launch/hills.launch.xml"/>
 
-    <node pkg="drone" exec="drone_pose"/>
+    <node pkg="drone" exec="drone_position"/>
     <node pkg="drone" exec="drone_lifecycle_manager"/>
 
 </launch>

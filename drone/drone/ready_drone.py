@@ -87,7 +87,7 @@ class ReadyDroneNode(Node):
             self.is_armed = self.arm_drone()
 
         if self.is_armed:
-            time.sleep(3)
+            time.sleep(10)
             feedback.message = "taking off"
             goal_handle.publish_feedback(feedback)
             self.is_takeoff = self.takeoff_drone(altitude)
