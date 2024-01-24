@@ -1,11 +1,17 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arduinobot">
+    <!-- includes -->
+    <xacro:include filename="$(find arduinobot_description)/urdf/arduinobot_gazebo_xacro" />
+    <xacro:include filename="$(find arduinobot_description)/urdf/arduinobot_ros2_control.xacro" />
+    
+
     <!-- variables -->
     <xacro:property name="PI" value="3.14159265359" />
     <xacro:property name="velocity" value="10.0" />
     <xacro:property name="effort" value="30.0" />
 
+    <!-- macros -->
     <xacro:macro name="default_inertial" params="mass">
         <inertial>
             <mass value="${mass}" />
@@ -15,12 +21,23 @@
         </inertial>
     </xacro:macro>
 
+    <xacro:macro name="default_transmission" params="number">
+        <transmission name="transmission_${number}">
+            <plugin>transmission_interface/SimpleTransmission</plugin>
+            <actuator name="motor_${number}" role="actuator1"/>
+            <joint name="joint_${number}" role="joint1">
+                <mechanical_reducation>1.0</mechanical_reducation>
+            </joint>
+        </transmission>    
+    </xacro:macro>
+
+
     <!-- links -->
 
     <link name="world" />
 
     <link name="base_link">
-        <xacro:default_intertial mass="1.0" />
+        <xacro:default_inertial mass="1.0" />
         <visual>
             <origin xyz="-0.5 -0.5 0" rpy="0 0 0" />
             <geometry>
@@ -38,7 +55,7 @@
     </link>
 
     <link name="base_plate_link">
-        <xacro:default_intertial mass="0.1" />
+        <xacro:default_inertial mass="0.1" />
         <visual>
             <origin xyz="-0.39 -0.39 -0.56" rpy="0 0 0" />
             <geometry>
@@ -56,7 +73,7 @@
     </link>
 
     <link name="forward_drive_arm_link">
-        <xacro:default_intertial mass="0.1" />
+        <xacro:default_inertial mass="0.1" />
         <visual>
             <origin xyz="0.19 0.06 -0.08" rpy="0 -${PI/2} ${PI/2}" />
             <geometry>
@@ -74,7 +91,7 @@
     </link>
 
     <link name="horizontal_arm_link">
-        <xacro:default_intertial mass="0.1" />
+        <xacro:default_inertial mass="0.1" />
         <visual>
             <origin xyz="-0.03 -0.4 -0.06" rpy="${PI/2} 0 ${PI/2}" />
             <geometry>
@@ -92,7 +109,7 @@
     </link>
 
     <link name="claw_support_link">
-        <xacro:default_intertial mass="0.05" />
+        <xacro:default_inertial mass="0.05" />
         <visual>
             <origin xyz="0 -0.05 -0.15" rpy="0 0 ${PI/2}" />
             <geometry>
@@ -110,7 +127,7 @@
     </link>
 
     <link name="gripper_right_link">
-        <xacro:default_intertial mass="0.01" />
+        <xacro:default_inertial mass="0.01" />
 
         <visual>
             <origin xyz="-0.1 0.5 -0.1" rpy="0 0 -${PI/2}" />
@@ -129,7 +146,7 @@
     </link>
 
     <link name="gripper_left_link">
-        <xacro:default_intertial mass="0.01" />
+        <xacro:default_inertial mass="0.01" />
         <visual>
             <origin xyz="-0.04 0.5 -0.1" rpy="0 0 -${PI/2}" />
             <geometry>
@@ -155,7 +172,7 @@
         <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="base_base_plate_joint_1" type="revolute">
+    <joint name="joint_1" type="revolute">
         <parent link="base_link" />
         <child link="base_plate_link" />
         <origin xyz="0 0 0.307" rpy="0 0 0" />
@@ -163,7 +180,7 @@
         <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}" />
     </joint>
 
-    <joint name="base_plate_forward_drive_arm_joint_2" type="revolute">
+    <joint name="joint_2" type="revolute">
         <parent link="base_plate_link" />
         <child link="forward_drive_arm_link" />
         <origin xyz="-0.02 0 0.35" rpy="0 0 0" />
@@ -171,7 +188,7 @@
         <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}" />
     </joint>
 
-    <joint name="forward_drive_arm_horizontal_arm_joint_3" type="revolute">
+    <joint name="joint_3" type="revolute">
         <parent link="forward_drive_arm_link" />
         <child link="horizontal_arm_link" />
         <origin xyz="0 0 0.8" rpy="0 0 0" />
@@ -179,13 +196,13 @@
         <limit lower="-${PI/2}" upper="${PI/2}" effort="${effort}" velocity="${velocity}" />
     </joint>
 
-    <joint name="horizontal_arm_claw_support_joint" type="fixed">
+    <joint name="horizontal_arm_claw_support" type="fixed">
         <parent link="horizontal_arm_link" />
         <child link="claw_support_link" />
         <origin xyz="0 0.82 0" rpy="0 0 0" />
     </joint>
 
-    <joint name="claw_support_gripper_right_joint_4" type="revolute">
+    <joint name="joint_4" type="revolute">
         <parent link="claw_support_link" />
         <child link="gripper_right_link" />
         <origin xyz="-0.04 0.13 -0.1" rpy="0 0 0" />
@@ -193,7 +210,7 @@
         <limit lower="-${PI/2}" upper="0.0" effort="${effort}" velocity="${velocity}" />
     </joint>
 
-    <joint name="claw_support_gripper_left_joint_5" type="revolute">
+    <joint name="joint_5" type="revolute">
         <parent link="claw_support_link" />
         <child link="gripper_left_link" />
         <origin xyz="-0.22 0.13 -0.1" rpy="0 0 0" />
@@ -201,5 +218,12 @@
         <limit lower="0.0" upper="${PI/2}" effort="${effort}" velocity="${velocity}" />
         <mimic joint="claw_support_gripper_right_joint_4" multiplier="-1" offset="0" />
     </joint>
+
+    <!-- transmissions -->
+    <xacro:default_transmission number="1" />
+    <xacro:default_transmission number="2" />
+    <xacro:default_transmission number="3" />
+    <xacro:default_transmission number="4" />
+
 
 </robot>
