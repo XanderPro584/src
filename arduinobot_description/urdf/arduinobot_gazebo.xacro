@@ -6,7 +6,8 @@
         <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
             <robot_param>robot_description</robot_param>
             <robot_param_node>robot_state_publisher</robot_param_node>
-            <parameters></parameters>
+            <!-- tell gazebo which parameters file to use -->
+            <parameters>$(find arduinobot_controller)/config/arduinobot_controllers.yaml</parameters>
         </plugin>
     </gazebo>
 
