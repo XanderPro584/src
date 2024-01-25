@@ -1,0 +1,15 @@
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/ament_index/resource_index/package_run_dependencies/arduinobot_msgs
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/ament_index/resource_index/parent_prefix_path/arduinobot_msgs
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/environment/ament_prefix_path.sh
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/environment/ament_prefix_path.dsv
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/environment/path.sh
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/environment/path.dsv
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/local_setup.bash
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/local_setup.sh
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/local_setup.zsh
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/local_setup.dsv
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/package.dsv
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/ament_index/resource_index/packages/arduinobot_msgs
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/cmake/arduinobot_msgsConfig.cmake
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/cmake/arduinobot_msgsConfig-version.cmake
+/home/alexander/ros2_ws/src/install/arduinobot_msgs/share/arduinobot_msgs/package.xml

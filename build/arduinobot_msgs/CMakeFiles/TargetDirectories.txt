@@ -1,0 +1,9 @@
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/uninstall.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/arduinobot_msgs_uninstall.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/test.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/edit_cache.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/rebuild_cache.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/list_install_components.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/install.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/install/local.dir
+/home/alexander/ros2_ws/src/build/arduinobot_msgs/CMakeFiles/install/strip.dir
