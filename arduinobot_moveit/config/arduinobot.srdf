@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<robot name="arduinobot">
+    <group name="arm">
+        <joint name="virtual_joint" />
+
+        <joint name="joint_1" />
+        <joint name="joint_2" />
+        <joint name="joint_3" />
+
+        <joint name="horizontal_arm_to_claw_support" />
+
+    </group>
+
+    <group name="gripper">
+        <joint name="joint_4" />
+        <joint name="joint_5" />
+
+    </group>
+</robot>
