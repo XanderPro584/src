@@ -27,7 +27,7 @@ def generate_launch_description():
         executable='move_group',
         name='move_group',
         output='screen',
-        parameters=[moveit_config.to_dict(), {"use_sim_time": is_sim}, {"publish_robot_description_semantic": True}]
+        parameters=[moveit_config.to_dict(), {"use_sim_time": is_sim}, {"publish_robot_description_semantic": True}],
         arguments=["--ros-args", "--log-level", "info"]
     )
 
@@ -38,7 +38,7 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         output='screen',
-        arguments=['-d', rviz_config]
+        arguments=['-d', rviz_config],
         parameters=[
             moveit_config.robot_description,
             moveit_config.robot_description_semantic,

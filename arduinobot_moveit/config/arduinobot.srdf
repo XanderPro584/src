@@ -6,7 +6,7 @@
         <joint name="joint_1" />
         <joint name="joint_2" />
         <joint name="joint_3" />
-        <joint name="horizontal_arm_to_claw_support" />
+        <joint name="horizontal_arm_claw_support" />
     </group>
 
     <group name="gripper">
@@ -22,6 +22,7 @@
 
     <group_state name="home" group="gripper">
         <joint name="joint_4" value="0" />
+        <!-- <joint name="joint_5" value="0" /> -->
     </group_state>
 
     <!-- disable collisions for joints that are next to each other -->
