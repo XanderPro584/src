@@ -87,7 +87,7 @@ class ReadyDroneNode(Node):
             self.is_armed = self.arm_drone()
 
         if self.is_armed:
-            time.sleep(10)
+            time.sleep(3)
             feedback.message = "taking off"
             goal_handle.publish_feedback(feedback)
             self.is_takeoff = self.takeoff_drone(altitude)
@@ -125,6 +125,7 @@ class ReadyDroneNode(Node):
         request = CommandBool.Request()
         request.value = True
         result = self.arm_client.call(request)
+        self.get_logger().info("Armed fron successful")
         return result.success
     
     def takeoff_drone(self, altitude):

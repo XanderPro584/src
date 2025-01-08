@@ -220,12 +220,12 @@
     </joint>
 
 
-    <!-- <link name="dummy_mimic_fix"/>
+    <link name="dummy_mimic_fix"/>
 
     <joint name="joint_5_mimic" type="fixed">
         <parent link="world" />
         <child link="dummy_mimic_fix" />
-    </joint> -->
+    </joint>
 
     <!-- transmissions -->
     <xacro:default_transmission number="1" />
